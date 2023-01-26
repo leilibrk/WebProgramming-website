@@ -1,0 +1,345 @@
+/*  
+    Add background image and set the container div. 
+    - The goal here is a background image on a website that covers the entire browser window at all times.
+*/
+
+/* body {
+    background: url("./images/background.jpeg") no-repeat center center fixed;
+    background-size: cover;
+} */
+/*
+    Flex display for the container which holds all objects in this page
+*/
+.container {
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    display: grid;
+    background-color: gray;
+}
+
+.cell{
+    color : white;
+    font-size: 2rem;
+    height: auto;
+    text-align:center;
+    
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.cell-Header{
+   
+    text-align: center;
+    font-size: 4rem;
+    height: 1000px;
+    background-image: url(./images/header-back.jpg);
+    margin: 0.5cm;
+    border: 20px solid white;
+}
+.cell-Lectures{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0.5cm;
+    background: linear-gradient(to left, #9c067948, #1039b44e, #25ce3c40), url(./images/lectures-back.jpg);
+}
+
+.cell-RelatedBooks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background : grey;
+    margin: 0.5cm;
+    text-align: center;
+}
+
+.cell-Footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background : grey;
+    margin: 0.5cm;
+}
+.column{
+    background-color: white;
+    margin: 1cm;
+    opacity: 0.8;
+    padding: 1cm;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    z-index: 100;
+}
+.column-out2{
+    background-color: grey;
+    z-index: 100;
+}
+.column-out3{
+    font-size: 20px;
+    line-height: 26 pt;
+    background-color: white;
+    z-index: 100;
+}
+.column-out2 div{
+    background-color: white;
+    float: left;
+    margin-right: 2em;
+    font-size: 10px;
+    text-align: center;
+    width: 2cm;
+    height: 1cm;
+    color: black;
+    z-index: 100;
+}
+.column-out2 h3{
+    border-color: wheat;
+    z-index: 100;
+}
+.mytext{
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-name: slideInLeft; 
+}
+.mytext::before{
+    font-style: italic;
+    font-size: 3rem;
+    content: "is what we are going to learn in this course.";
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+  text-align: right;
+  margin: 1cm;
+	top: 0;
+  z-index: 1000;
+}
+.menuButton{
+  color: black;
+  border-radius: 100%;
+  padding: 15px 15px;
+  border-color: black;
+  background-color: white;
+}
+.menuButton:hover{
+  background-color: #06D85F;
+}
+.button {
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    background-color:  white;
+    color: black;
+    border-radius: 50%;
+    min-height: 50px;
+    
+}
+.button:hover{
+    background-color: greenyellow;
+
+  }
+
+.column-out4:hover {
+    min-width: 200px;
+    color: black;
+}
+/* .column-out4 pr{
+  z-index: 1000;
+} */
+
+
+h2 {
+    text-align: center;
+}
+p{
+    line-height: 3em;
+}
+.myhead:hover{
+    font-weight: 900;
+}
+.column-out2 div:hover{
+    background: #06D85F;
+ }
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: white;
+    width: 200px;
+    height: 400px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    z-index: 100;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    z-index: 100;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;/* Safari */
+    backface-visibility: hidden;
+    z-index: 100;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .card-front {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    z-index: 100;
+  }
+
+  .buttoninfo {
+    font-size: 12px;
+    padding: 10px;
+    color: black;
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  .buttoninfo:hover {
+    background: #06D85F;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 2cm;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 5em;
+    min-width: 5em;
+    position: absolute;
+    transition: all 5s ease-in-out;
+    float: left;
+    opacity: 100%;
+    z-index: 2000;
+    font-size: 18px;
+  }
+  .popup-menu{
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    margin: 1cm;
+    background: linear-gradient(#64a3e6, #601968);
+    padding-top: 3.5cm;
+    z-index: 1000;
+  }
+  .popup-menu h1{
+    color: white;
+    text-align: center;
+
+  }
+  .itemButton{
+    background-color: transparent;
+    font-size: 25px;
+  }
+  .itemButton:hover{
+    background-color: #06D85F;
+  }
+  .popup-menu a:link{
+    text-decoration: none;
+    color: white;
+  }
+  .popup-menu a:visited{
+    text-decoration: none;
+    color: white;
+  }
+  .popup-menu a:hover{
+    text-decoration: none;
+    color: white;
+  }
+  .popup-menu a:active{
+    text-decoration: none;
+    color: white;
+  }
+  .cell-Header a:link{
+    text-decoration: none;
+    color: white;
+  }
+  .cell-Header a:visited{
+    text-decoration: none;
+    color: white;
+  }
+  .cell-Header a:hover{
+    text-decoration: none;
+    color: white;
+  }
+  .cell-Header a:active{
+    text-decoration: none;
+    color: white;
+  }
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+.buyButton{
+  color: rgb(39, 120, 212);
+
+}
+.buyButton:hover{
+  background-color: rgb(57, 57, 220);
+}
+ 
